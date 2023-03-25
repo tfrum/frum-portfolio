@@ -1,5 +1,11 @@
 # frum-python-portfolio
 Proof that I can do the basics and the big things. Designed with teaching and explanation in-mind.
 
-Under 'the_basics' you'll find:
-''
+## the_basics
+101 Examples and LeetCode Solutions. Updated as I get around to it.
+```
+fizzbuzz.py
+bubblesort.py
+```
+
+## projects
