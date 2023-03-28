@@ -13,5 +13,7 @@ median-of-two-lists
 
 ## projects
 See my other projects such as:
+
 ``` spiteful-arpg ```
+
 This is my first dive into gamedev using pygame in 2d-isometric style. It's just a renderer at the moment.
