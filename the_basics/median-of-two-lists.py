@@ -1,5 +1,3 @@
-# this question is broken on LeetCode as of 2023-03-28 (y/m/d)
-
 """
 Given two sorted arrays nums1 and nums2 of size m and n respectively, 
 return the median of the two sorted arrays.
@@ -9,7 +7,8 @@ The overall run time complexity should be O(log (m+n))
 
 # this is a very easy problem if you don't want to do it manually
 # let's do it semi-manually by using .sort() but not median()
-# to check other cases just modify these. I'm going for simplicity.
+# to check other cases just modify these. I'm just showing my solution so 
+# I won't make a program to load in test cases.
 nums1 = [1, 3, 4]
 nums2 = [2, 5]
 
@@ -26,9 +25,9 @@ print(nums3)
     # in leetcode for example it is not needed
 if len(nums3) % 2 == 0:
     # if it's even-len() then we need to calculate median and it should be a float
-    lowmed = nums3[int(length / 2)]
-    highmed = nums3[int((length / 2) + 1)]
-    median = lowmed + float((lowmed - highmed)) / 2
+    lowmed = nums3[int(length / 2) - 1]
+    highmed = nums3[int(length / 2)]
+    median = lowmed + float((highmed - lowmed)) / 2
     print("Median: ", median)
 else:
     # len() returns an int which rounds up on division
