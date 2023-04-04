@@ -9,6 +9,7 @@ My goal with these is to explain what I did to someone who is very new to python
 bubblesort.py
 fizzbuzz.py
 median-of-two-lists
+sudoku-solver
 ```
 
 ## projects
