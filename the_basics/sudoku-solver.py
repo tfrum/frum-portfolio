@@ -8,6 +8,9 @@ Each of the digits 1-9 must occur exactly once in each column.
 Each of the digits 1-9 must occur exactly once in each of the 9 3x3 sub-boxes of the grid.
 The '.' character indicates empty cells.
 """
+
+##TODO: clear terminal so we get "live" updated boards.
+
 import time
 
 
@@ -45,8 +48,7 @@ def solver(board):
     print("bleh")
 
 
-# if you aren't familiar, you do this so you can call the main function
-# it checks 
+# This checks if this file is being run as the main python file then calls main()
 
 if __name__ == '__main__':
     main()
