@@ -6,7 +6,7 @@ The overall run time complexity should be O(log (m+n))
 """
 
 # this is a very easy problem if you don't want to do it manually
-# let's do it semi-manually by using .sort() but not median()
+# let's do it semi-manually by using .sort() but not .median()
 # to check other cases just modify these. I'm just showing my solution so 
 # I won't make a program to load in test cases.
 nums1 = [1, 3, 4]
