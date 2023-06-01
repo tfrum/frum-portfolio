@@ -1,5 +1,16 @@
-import numpy as np
-# Generate random data
-data = np.random.randn(2, 3)
+for i in range(0, 1000, 11):
+    binary = bin(i)
+    print(str(i) + "\t" + str(binary))
 
-print(data)
+'''
+11    1011
+22    10110
+33    100001
+44    101100
+55    110111
+66    1000010
+77    1001101
+88    1011000
+99    1100011
+
+'''
