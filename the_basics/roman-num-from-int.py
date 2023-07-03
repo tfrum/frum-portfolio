@@ -7,7 +7,7 @@ ronum_dict = {
     "D": 500,
     "M": 1000
 }
-intnum = 1888
+intnum = 1994
 
 
 def main():
