@@ -1,10 +1,10 @@
+# This is a hastily made open source demo of a closed source project of mine called pattern-file-grabber.
+
 '''
    This script operates by taking a base URL, then arguments for what parts of that URL you'd like to increment.
    It's a basic string searching algorithm--nothing special. It will increment time-series data forward in time.
    This should work without much changing on most government pdf reports.
 
-   I have not implemented functionality for retrieving reports older than 2013 without errors if they include a
-   month number that matches the year number.
    Most government departments post on the same day each month, so that should also usually work.
    
    Ultimately, this is not meant to scrape every possible report from every possible date, but it would
@@ -17,10 +17,24 @@
    I also didn't fully implement error handling here.
    
    This also won't work with funky dates because of how the re library behaves. dates like 202302 won't
-   be parsed properly. They're also rare. This tool is literally just to save time, sometimes, downloading
-   lots of predictably-urled pdfs. Who knows maybe I'll extend it.
+   be parsed properly. Solving this requires that we cut up urls into string arrays and run a check for matching patterns
+   on each item to break them up.
 
-   I also stripped the ability to catch "_Revised" urls.
+   Other s
+
+
+   * TODO
+     - Finish manual pattern algorithms
+     - Add in openAI API pipeline to generate potential URLs
+     - Functionality to call RAGgedy-Annelyzer's PDF-to-vector database ingestor.
+        - Or whatever I call the open source version of that. Seems the RAG landscape has changed
+          a bit in the last six months.
+     - Start making open source version of raggedy_annelyzer
+     - Implement error handling
+     - Implement url parser function.
+     - Parse for reserved characters in urls, substitute them for themselves, then reinsert their codes on download.
+     - Support for dates older than 2013 in manual mode.
+     - Parse every possible day option.
 '''
 
 # Remember to make it so string months can handle january | JANUARY | jan type edge cases
@@ -43,7 +57,7 @@ def run():
     #Grab the current date to serve as an upper bound for our dynamic search.
     current_date = datetime.datetime.now()
     date_limit = (current_date.strftime('%B'), current_date.year % 100)
-    
+
     # A dictionary to store out user substrings in.
     substrings_and_types = {}
  
@@ -59,8 +73,6 @@ def run():
     
 
 def get_user_input(input_url, date_types, substrings_and_types):
-    # We will only be handling resolution up to the month, as report publication days aren't reliable.
-
     # Prompt for input URL
     input_url = input("\nInput a base URL below:\n")
     
@@ -88,6 +100,15 @@ def get_user_input(input_url, date_types, substrings_and_types):
             print("Invalid choice. Please enter a valid number.")
             
     return input_url
+
+
+def reserved_char_parser(base_url):
+    # checks for and replaces reserved character string like "%20"
+    print()
+
+def url_date_cutter(base_url):
+    # Called if check_substrings_in_url throws negative
+    print()
 
 
 def generate_urls(base_url, substrings_and_types, date_limit):
