@@ -35,6 +35,7 @@
      - Parse for reserved characters in urls, substitute them for themselves, then reinsert their codes on download.
      - Support for dates older than 2013 in manual mode.
      - Parse every possible day option.
+     - Error handling for reports that have the same name
 '''
 
 # Remember to make it so string months can handle january | JANUARY | jan type edge cases
@@ -62,7 +63,7 @@ def run():
     substrings_and_types = {}
  
     # We'll grab our URL here
-    input_url = get_user_input(input_url, date_types, substrings_and_types)
+    input_url = get_user_input(date_types, substrings_and_types)
 
     url_list = generate_urls(input_url, substrings_and_types, date_limit)
 
@@ -72,7 +73,7 @@ def run():
     download_files(url_list)
     
 
-def get_user_input(input_url, date_types, substrings_and_types):
+def get_user_input(date_types, substrings_and_types):
     # Prompt for input URL
     input_url = input("\nInput a base URL below:\n")
     
