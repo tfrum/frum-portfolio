@@ -1,13 +1,16 @@
 # CREATE TABLES
-So here are our instructions
-1. Write CREATE statements in sql_queries.py to create each table.
-2. Write DROP statements in sql_queries.py to drop each table if it exists.
-3. Run create_tables.py to create your database and tables.
-4. Run test.ipynb to confirm the creation of your tables with the correct columns. Make sure to click "Restart kernel" to close the connection to the database after running this notebook.
+Let's decipher what the project wants us to do, because like all Udacity projects, it was written by an anteater
+on a 2017 base model macbook in 2017 and deployed using an undergraduate's boutique version of docker in a jupyter notebook.
 
-We'll start at step 1:
-We need to write some CREATE and DROP statements.
-We need to make 5 tables: songplays, users, songs, artists, time. 
-They provide the keys for these tables in part 3 of the project page.
+We're going to just do this as a step by step:
 
-However, we have an issue. I don't want to use Udacity's unintuitive Jupyter workspace *and* the create_tables.py file references databases that I don't have locally.
+# Step 1 - Prep
+First we set up our create_tables.py file, which was straight forward enough.
+We're provied all the information we need to make these. I formatted them to be readable.
+
+# Step 2
+Run `%run create_tables.py` so execute that python program and populate the database.
+If we try to run test.ipynb right now, we'll get zero rows returned because we need to do our ETL.
+It will close out of the database on its own without modification. 
+
+# Step 3 - ETL
