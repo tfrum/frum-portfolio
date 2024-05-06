@@ -1,16 +1,12 @@
-# CREATE TABLES
-Let's decipher what the project wants us to do, because like all Udacity projects, it was written by an anteater
-on a 2017 base model macbook in 2017 and deployed using an undergraduate's boutique version of docker in a jupyter notebook.
 
-We're going to just do this as a step by step:
+During this project I made some modifications to the ETL.ipynb file so that we could just run it without needing to drop into a terminal.
+My preference would have been to integrate all of these files into one single modular notebook, but that's not within the scope of the project.
 
-# Step 1 - Prep
-First we set up our create_tables.py file, which was straight forward enough.
-We're provied all the information we need to make these. I formatted them to be readable.
+# STEPS
 
-# Step 2
-Run `%run create_tables.py` so execute that python program and populate the database.
-If we try to run test.ipynb right now, we'll get zero rows returned because we need to do our ETL.
-It will close out of the database on its own without modification. 
+## Create Tables
 
-# Step 3 - ETL
+We have successfully implemented the create and drop statements in 'sql_queries.py'.
+test.ipynb validates this.
+
+##

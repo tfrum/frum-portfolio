@@ -48,7 +48,6 @@ def solver(board):
     print("bleh")
 
 
-# This checks if this file is being run as the main python file then calls main()
 
 if __name__ == '__main__':
     main()
