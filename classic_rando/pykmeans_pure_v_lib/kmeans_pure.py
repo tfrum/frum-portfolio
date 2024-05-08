@@ -1,45 +1,51 @@
-import random
-import math
+def init_centroids(data, n_clusters):
+  """Randomly initializes cluster centers."""
+  centroids = []
+  for _ in range(n_clusters):
+    index = random.randint(0, len(data) - 1)
+    centroids.append(data[index].copy())  # Ensure separate copy
+  return centroids
 
-class KMeans:
-    def __init__(self, n_clusters, max_iter=300, random_state=0):
-        self.n_clusters = n_clusters
-        self.max_iter = max_iter
-        self.random_state = random_state
-        self.centroids = None
+def closest_centroid(x, centroids):
+  """Calculates the closest centroid for a data point using distance squared."""
+  min_distance_squared = float('inf')  # Positive infinity
+  closest_index = None
+  for i, centroid in enumerate(centroids):
+    distance_squared = sum((x_i - c_i) ** 2 for x_i, c_i in zip(x, centroid))
+    if distance_squared < min_distance_squared:
+      min_distance_squared = distance_squared
+      closest_index = i
+  return closest_index
 
-    def _init_centroids(self, X):
-        random.seed(self.random_state)
-        self.centroids = random.sample(list(X), self.n_clusters)
+def update_centroids(data, labels, n_clusters):
+  """Recalculates centroids as the mean of points in their cluster."""
+  centroids = [[0] * len(data[0]) for _ in range(n_clusters)]  # Initialize
+  for i in range(n_clusters):
+    cluster_members = [data[j] for j in range(len(data)) if labels[j] == i]
+    if cluster_members:
+      for dim in range(len(data[0])):
+        centroids[i][dim] = sum(point[dim] for point in cluster_members) / len(cluster_members)
+  return centroids
 
-    def _closest_centroid(self, x):
-        distances = [math.sqrt(sum((x_i - c_i) ** 2 for x_i, c_i in zip(x, centroid)))
-                     for centroid in self.centroids]
-        return distances.index(min(distances))
+def predict(data, centroids):
+  """Assigns data points to the closest centroid."""
+  labels = []
+  for x in data:
+    labels.append(closest_centroid(x, centroids))
+  return labels
 
-    def _update_centroids(self, X, labels):
-        for i in range(self.n_clusters):
-            new_centroid = [0] * len(X[0])  # Assuming consistent dimensionality
-            cluster_members = [X[j] for j in range(len(X)) if labels[j] == i]
-            if cluster_members:
-                new_centroid = [sum(x) / len(cluster_members) for x in zip(*cluster_members)]
-            self.centroids[i] = new_centroid
+def fit(data, n_clusters, max_iter=300):
+  """Iteratively refines centroids and assignments until convergence."""
+  centroids = init_centroids(data, n_clusters)
+  for _ in range(max_iter):
+    old_centroids = centroids.copy()
+    labels = predict(data, centroids)
+    centroids = update_centroids(data, labels, n_clusters)
+    if old_centroids == centroids:  # Check for convergence
+      break
+  return labels
 
-    def predict(self, X):
-        labels = [self._closest_centroid(x) for x in X]
-        return labels
-
-    def fit(self, X):
-        self._init_centroids(X)
-
-        for _ in range(self.max_iter):
-            old_centroids = self.centroids
-            labels = self.predict(X)
-            self._update_centroids(X, labels)
-            if old_centroids == self.centroids:  # Check for convergence
-                break
-
+# Sample Usage 
 data = [[1, 2], [1.5, 1.8], [5, 8], [8, 8], [1, 0.6], [9, 11]]
-kmeans = KMeans(n_clusters=2) 
-kmeans.fit(data)
-print(kmeans.predict(data))
+labels = fit(data, 2)
+print(labels)

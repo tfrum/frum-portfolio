@@ -1,0 +1,7 @@
+I bought a new enclosure for my backup drives in 2021.
+It overheated while I was asleep.
+Drive 1 failed. I backed up its contents to drive 2, which then also failed.
+The third backup drive failed trying to rescue contents from it later that day.
+
+Three server drives dead to an overheated enclosure in a single day, all with platter crashes.
+I buy SSDs now.
