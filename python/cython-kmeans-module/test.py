@@ -1,10 +1,10 @@
 import kmeans
 
 def main():
-    # Create an instance of KMeans with 3 clusters
+    # KMeans with 3 clusters
     km = kmeans.KMeans(n_clusters=3)
 
-    # Adding some points
+    # fake data
     km.add_point(1.0, 2.0)
     km.add_point(2.0, 1.0)
     km.add_point(4.0, 2.0)
@@ -13,7 +13,7 @@ def main():
     km.add_point(2.0, 3.0)
     km.add_point(5.0, 7.0)
     
-    # Compute the centroids
+    # compute the centroids
     km.compute()
 
     print("Clustering complete. Centroids:")
