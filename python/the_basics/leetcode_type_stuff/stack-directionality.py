@@ -45,20 +45,37 @@ def check_stack_growth3():
 
 
 
-
+'''
 print(check_stack_growth1())
 print(check_stack_growth2())
 print(check_stack_growth3())
+'''
 
-
-def get_address():
-    return id(ctypes.c_int())
+def get_address(y):
+    x = y
+    return ctypes.addressof(ctypes.c_int.from_address(id(x)))
 
 def check_stack_growth():
-    addr1 = get_address()
-    addr2 = get_address()
-    print(f'{addr1}\n{addr2}')
+    y = 1
+    addr1 = get_address(y)
+    y = 2
+    addr2 = get_address(y)
     growth = 'down' if addr1 > addr2 else 'up'
-    return f'The stack appears to grow {growth}.'
+    return f'{addr1}\n{addr2}\n{growth}.'
 
 print(check_stack_growth())
+
+import ctypes
+
+def get_addressc(obj):
+    return ctypes.addressof(ctypes.py_object(obj))
+
+def check_stack_growthc():
+    y = 1
+    addr1 = get_addressc(y)
+    y = 2
+    addr2 = get_addressc(y)
+    growth = 'down' if addr1 > addr2 else 'up'
+    return f'{addr1}\n{addr2}\n{growth}.'
+
+print(check_stack_growthc())
