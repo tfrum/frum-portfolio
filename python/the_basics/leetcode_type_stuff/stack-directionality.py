@@ -1,6 +1,9 @@
 # In python we don't access to standard pointers, so we can't dereference
 # an object in memory to figure out whether the architecture we're on grows
 # the stack up or down.
+# This is all test code to prove that you can't do this while I was arguing with
+# an AI
+
 import ctypes
 
 def check_stack_growth1():
