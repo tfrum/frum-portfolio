@@ -64,7 +64,6 @@ while True:
         value = float(value)
     update_queue.put((employee_id, column, value))
     time.sleep(1)  # Simulate some delay between updates
-    print('Stuck?')
 
 # Stop the update processing thread
 update_queue.put(None)

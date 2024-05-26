@@ -1,3 +1,5 @@
+# Basically Steve Balmer's first python project lbh
+
 class Board:
     def __init__(self, grid):
         self.grid = grid

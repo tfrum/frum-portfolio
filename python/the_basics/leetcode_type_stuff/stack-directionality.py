@@ -1,10 +1,14 @@
-# In python we don't access to standard pointers, so we can't dereference
+# In python we don't access to standard pointers, so we can't just dereference
 # an object in memory to figure out whether the architecture we're on grows
-# the stack up or down.
-# This is all test code to prove that you can't do this while I was arguing with
-# an AI
+# the stack up or down. We can get the ID, but it might not always indicate  it
+# correctly. Of course... I don't have an ancient system that runs python to test
+# grow-up stack morphology. iiwii
 
 import ctypes
+import sys
+
+sys.setrecursionlimit(10000)
+
 
 def check_stack_growth1():
     def get_id(obj):
@@ -24,12 +28,12 @@ def check_stack_growth1():
 def check_stack_growth2():
     def recursive_call(n, ids):
         if n > 0:
-            ids.append(id(n))  # Record the memory address of the local variable `n`
+            ids.append(id(n))
             recursive_call(n-1, ids)
     ids = []
     recursive_call(100, ids)
-    growth = 'down' if ids[0] < ids[-1] else 'up'  # Compare addresses
-    return f'The stack appears to grow {growth}.'
+    growth = 'down' if ids[0] < ids[-1] else 'up'
+    return f'{growth}.'
 
 
 
@@ -38,21 +42,15 @@ def check_stack_growth3():
 
     def recursive_call(n):
         if n > 0:
-            local_var = ctypes.c_void_p()  # Create a local variable
-            addresses.append(ctypes.addressof(local_var))  # Record its address
+            local_var = ctypes.c_void_p()
+            addresses.append(ctypes.addressof(local_var))
             recursive_call(n - 1)
 
     recursive_call(10)
     growth = 'down' if addresses[0] > addresses[-1] else 'up'
     return f'The stack appears to grow {growth}.'
 
-
-
-'''
-print(check_stack_growth1())
-print(check_stack_growth2())
-print(check_stack_growth3())
-'''
+# The first three were trash AI answers these ones are mine playing around:
 
 def get_address(y):
     x = y
@@ -66,9 +64,6 @@ def check_stack_growth():
     growth = 'down' if addr1 > addr2 else 'up'
     return f'{addr1}\n{addr2}\n{growth}.'
 
-print(check_stack_growth())
-
-import ctypes
 
 def get_addressc(obj):
     return ctypes.addressof(ctypes.py_object(obj))
@@ -82,3 +77,29 @@ def check_stack_growthc():
     return f'{addr1}\n{addr2}\n{growth}.'
 
 print(check_stack_growthc())
+
+# the best definitive answer that I could come up with
+# fixes the issues of python reusing the same address space and
+# thus returning the exact same ID between recursions
+def check_stack_growth_recursive(depth, last_address=None):
+    x = depth  # Local variable whose address we observe
+    current_address = id(x)
+
+    print(f"Depth: {depth}, Address of x: {current_address}")
+
+    if depth <= 0:
+        return
+
+    if last_address is not None:
+        growth = 'down' if current_address < last_address else 'up'
+        print(f'{growth}.')
+
+
+    check_stack_growth_recursive(depth - 1, current_address)
+
+
+print(check_stack_growth1())
+print(check_stack_growth2())
+print(check_stack_growth3())
+print(check_stack_growth())
+check_stack_growth_recursive(50)

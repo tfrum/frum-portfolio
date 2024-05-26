@@ -1,0 +1,47 @@
+Apr 28 00:00:07 HP-S01 systemd[1]: Starting logrotate.service - Rotate log files...
+Apr 28 00:00:08 HP-S01 systemd[1]: dpkg-db-backup.service: Deactivated successfully.
+Apr 28 00:00:08 HP-S01 systemd[1]: Finished dpkg-db-backup.service - Daily dpkg database backup service.
+Apr 28 00:00:09 HP-S01 systemd[1]: Reloading icecast2.service - LSB: Icecast2 streaming media server...
+Apr 28 00:00:09 HP-S01 systemd[1]: Reloaded icecast2.service - LSB: Icecast2 streaming media server.
+Apr 28 00:00:09 HP-S01 systemd[1]: Reloading icecast2.service - LSB: Icecast2 streaming media server...
+Apr 28 00:00:09 HP-S01 systemd[1]: Reloaded icecast2.service - LSB: Icecast2 streaming media server.
+Apr 28 00:00:10 HP-S01 systemd[1]: rsyslog.service: Sent signal SIGHUP to main process 606 (rsyslogd) on client request.
+Apr 28 00:00:10 HP-S01 systemd[1]: logrotate.service: Deactivated successfully.
+Apr 28 00:00:10 HP-S01 systemd[1]: Finished logrotate.service - Rotate log files.
+Apr 28 00:18:54 HP-S01 systemd[1]: Reloading smbd.service - Samba SMB Daemon...
+Apr 28 00:18:54 HP-S01 systemd[1]: Reloaded smbd.service - Samba SMB Daemon.
+Apr 28 01:19:38 HP-S01 smartd[610]: Device: /dev/sda [SAT], SMART Usage Attribute: 195 Hardware_ECC_Recovered changed from 54 to 53
+Apr 28 02:19:38 HP-S01 smartd[610]: Device: /dev/sda [SAT], SMART Usage Attribute: 190 Airflow_Temperature_Cel changed from 68 to 69
+Apr 28 02:19:38 HP-S01 smartd[610]: Device: /dev/sda [SAT], SMART Usage Attribute: 194 Temperature_Celsius changed from 32 to 31
+Apr 28 03:10:01 HP-S01 CRON[970613]: (root) CMD (test -e /run/systemd/system || SERVICE_MODE=1 /sbin/e2scrub_all -A -r)
+Apr 28 03:10:12 HP-S01 systemd[1]: Starting e2scrub_all.service - Online ext4 Metadata Check for All Filesystems...
+Apr 28 03:10:12 HP-S01 systemd[1]: e2scrub_all.service: Deactivated successfully.
+Apr 28 03:10:12 HP-S01 systemd[1]: Finished e2scrub_all.service - Online ext4 Metadata Check for All Filesystems.
+Apr 28 03:30:01 HP-S01 CRON[970718]: (root) CMD (test -e /run/systemd/system || SERVICE_MODE=1 /usr/lib/x86_64-linux-gnu/e2fsprogs/e2scrub_all_cron)
+Apr 28 06:20:05 HP-S01 systemd[1]: Starting apt-daily-upgrade.service - Daily apt upgrade and clean activities...
+Apr 28 06:21:29 HP-S01 systemd[1]: apt-daily-upgrade.service: Deactivated successfully.
+Apr 28 06:21:29 HP-S01 systemd[1]: Finished apt-daily-upgrade.service - Daily apt upgrade and clean activities.
+Apr 28 06:21:29 HP-S01 systemd[1]: apt-daily-upgrade.service: Consumed 1min 22.222s CPU time.
+Apr 28 07:19:38 HP-S01 smartd[610]: Device: /dev/sda [SAT], SMART Usage Attribute: 195 Hardware_ECC_Recovered changed from 53 to 52
+Apr 28 08:35:18 HP-S01 systemd[1]: Reloading smbd.service - Samba SMB Daemon...
+Apr 28 08:35:18 HP-S01 systemd[1]: Reloaded smbd.service - Samba SMB Daemon.
+Apr 28 09:19:38 HP-S01 smartd[610]: Device: /dev/sda [SAT], SMART Usage Attribute: 195 Hardware_ECC_Recovered changed from 52 to 53
+Apr 28 10:29:11 HP-S01 systemd[1]: Starting man-db.service - Daily man-db regeneration...
+Apr 28 10:29:14 HP-S01 systemd[1]: man-db.service: Deactivated successfully.
+Apr 28 10:29:14 HP-S01 systemd[1]: Finished man-db.service - Daily man-db regeneration.
+Apr 28 12:19:39 HP-S01 smartd[610]: Device: /dev/sda [SAT], SMART Usage Attribute: 190 Airflow_Temperature_Cel changed from 69 to 70
+Apr 28 12:19:39 HP-S01 smartd[610]: Device: /dev/sda [SAT], SMART Usage Attribute: 194 Temperature_Celsius changed from 31 to 30
+Apr 28 12:45:42 HP-S01 systemd[1]: Starting apt-daily.service - Daily apt download activities...
+Apr 28 12:47:24 HP-S01 systemd[1]: apt-daily.service: Deactivated successfully.
+Apr 28 12:47:24 HP-S01 systemd[1]: Finished apt-daily.service - Daily apt download activities.
+Apr 28 12:47:24 HP-S01 systemd[1]: apt-daily.service: Consumed 1min 41.578s CPU time.
+Apr 28 12:49:38 HP-S01 smartd[610]: Device: /dev/sda [SAT], SMART Usage Attribute: 195 Hardware_ECC_Recovered changed from 53 to 52
+Apr 28 13:19:38 HP-S01 smartd[610]: Device: /dev/sda [SAT], SMART Usage Attribute: 190 Airflow_Temperature_Cel changed from 70 to 69
+Apr 28 13:19:38 HP-S01 smartd[610]: Device: /dev/sda [SAT], SMART Usage Attribute: 194 Temperature_Celsius changed from 30 to 31
+Apr 28 13:49:38 HP-S01 smartd[610]: Device: /dev/sda [SAT], SMART Usage Attribute: 190 Airflow_Temperature_Cel changed from 69 to 70
+Apr 28 13:49:38 HP-S01 smartd[610]: Device: /dev/sda [SAT], SMART Usage Attribute: 194 Temperature_Celsius changed from 31 to 30
+Apr 28 14:19:38 HP-S01 smartd[610]: Device: /dev/sda [SAT], SMART Usage Attribute: 190 Airflow_Temperature_Cel changed from 70 to 69
+Apr 28 14:19:38 HP-S01 smartd[610]: Device: /dev/sda [SAT], SMART Usage Attribute: 194 Temperature_Celsius changed from 30 to 31
+Apr 28 14:49:38 HP-S01 smartd[610]: Device: /dev/sda [SAT], SMART Usage Attribute: 190 Airflow_Temperature_Cel changed from 69 to 70
+Apr 28 14:49:38 HP-S01 smartd[610]: Device: /dev/sda [SAT], SMART Usage Attribute: 194 Temperature_Celsius changed from 31 to 30
+Apr 28 16:49:38 HP-S01 smartd[610]: Device: /dev/sda [SAT], SMART Usage Attribute: 195 Hardware_ECC_Recovered changed from 52 to 53
