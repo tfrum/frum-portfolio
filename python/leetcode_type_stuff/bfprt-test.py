@@ -13,5 +13,5 @@ def main():
     print(f"The {k}-th smallest element in the file is {kth_smallest}")
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
