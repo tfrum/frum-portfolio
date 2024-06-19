@@ -67,7 +67,7 @@ class BinaryTree:
             elements.append(node.val)
             self._inorder_traversal_recursive(node.right, elements)
 
-# Testing isn't just a city in Englist
+# Testing isn't just a city in England
 tree = BinaryTree()
 tree.add(5)
 tree.add(3)
