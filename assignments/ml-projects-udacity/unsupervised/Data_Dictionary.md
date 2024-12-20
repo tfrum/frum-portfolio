@@ -259,6 +259,24 @@ Dominating movement of person's youth (avantgarde vs. mainstream; east vs. west)
 - 14: 90s - digital media kids (Mainstream, E+W)
 - 15: 90s - ecological awareness (Avantgarde, E+W)
 
+### 1.18.1 GENERATED COLUMNS
+DECADE
+Description: Decade of upbringing derived from PRAEGENDE_JUGENDJAHRE.
+Values:
+    40: 1940s
+    50: 1950s
+    60: 1960s
+    70: 1970s
+    80: 1980s
+    90: 1990s
+    NaN: Unknown
+MOVEMENT
+Description: Cultural movement during upbringing derived from PRAEGENDE_JUGENDJAHRE.
+Values:
+    0: Mainstream
+    1: Avantgarde
+    NaN: Unknown
+
 ### 1.19. RETOURTYP_BK_S
 Return type
 - 0: unknown
@@ -579,6 +597,24 @@ German CAMEO: Wealth / Life Stage Typology, mapped to international code
 - XX: unknown
 
 -----
+
+### 4.3.1 CAMEO GENERATED COLUMNS
+MOVEMENT
+Description: Cultural movement during upbringing derived from PRAEGENDE_JUGENDJAHRE.
+Values:
+0: Mainstream
+1: Avantgarde
+NaN: Unknown
+WEALTH
+
+Description: Wealth level derived from the tens digit of CAMEO_INTL_2015.
+Values:
+1: Wealthy
+2: Prosperous
+3: Comfortable
+4: Less affluent
+5: Poor
+NaN: Unknown
 
 ## 5. RR3 micro-cell features
 
